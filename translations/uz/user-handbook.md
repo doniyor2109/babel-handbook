@@ -42,28 +42,26 @@ Bu qo'llanma boshqa tillarda ham mavjud, [README](/README.md) da boshqa tillarda
   - [Babel muammolari](#toc-babel-issues)
     - [Babel haqida bug yozish](#toc-creating-an-awesome-babel-bug-report)
 
-# <a id="toc-introduction"></a>Introduction
+# <a id="toc-introduction"></a>Kirish
 
-Babel is a generic multi-purpose compiler for JavaScript. Using Babel you can
-use (and create) the next generation of JavaScript, as well as the next
-generation of JavaScript tooling.
+Babel universal kop funksionalli JavaScript kompilatori.
+Babel ni ishlatib, siz oxirgi JavaScript imkoniyaylaridan foydalana olasiz yoki yarata olasiz.
+ 
+JavaScript juda tez rivojlanayotgan va kop imkoniyatlar qoshiladigan til hisoblanadi.
+Babel ni ishlatgan holda, siz JavaScriptning oxirgi imkoniyatlarni, hali ular rasmiy elon
+qilinmasidan oldin foydalana olasiz.
 
-JavaScript as a language is constantly evolving, with new specs and proposals
-coming out with new features all the time. Using Babel will allow you to use
-many of these features years before they are available everywhere.
+Babel bu imkoniyatni quyidagi holda amalga oshiradi. JavaScriptnig oxirigi standtarlarida yozilgan kodni
+barcha joyda ishlaydigan JavaScript versiyasiga ogiradi. Bu jarayon source-to-source kompilatsiya deyiladi
+va transpiling ham deb nomlanadi.
 
-Babel does this by compiling down JavaScript code written with the latest
-standards into a version that will work everywhere today. This process is known
-as source-to-source compiling, also known as transpiling.
-
-For example, Babel could transform the new ES2015 arrow function
-syntax from this:
+Misol uchun, Babel yangi ES2015 arrow funksiya sintaksisini bu korinishdan:
 
 ```js
 const square = n => n * n;
 ```
 
-Into the following:
+Bu korinishga otqaza oladi:
 
 ```js
 const square = function square(n) {
@@ -71,23 +69,22 @@ const square = function square(n) {
 };
 ```
 
-However, Babel can do much more than this as Babel has support for syntax
-extensions such as the JSX syntax for React and Flow syntax support for static
-type checking.
+Babelda bundan ham koproq imkoniyatlarga ega. Babelda React uchun JSX sintaksisi 
+va statik tip tekshirish uchun Flow sintaksisi imkoniyatlari mavjud, 
 
-Further than that, everything in Babel is simply a plugin and anyone can go out
-and create their own plugins using the full power of Babel to do whatever
-they want.
+Qo'shimchasiga, Babel oddiy plugin lardan iborat. Har kim Babel uchun o'zini 
+pluginini yaratishi va Babelning to'liq imkoniyatlaridan foydalanib hohlagan 
+amalarni bajarish mumkin.
 
-*Even further* than that, Babel is broken down into a number of core modules
-that anyone can use to build the next generation of JavaScript tooling.
+*Yana qo'shimcha qilib* Babel birnechta modullarga bo'linadi. Bu moddullarni ishlatgan holda,
+JavaScript uchun keyingi avlod toollarini yaratish mumkin.
 
-Many people do too, the ecosystem that has sprung up around Babel is massive and
-very diverse. Throughout this handbook I'll be covering both how built-in Babel
-tools work as well as some useful things from around the community.
+Ko'plar bu imkoniyatlardan foydalanadi va shu tufayli Babelning ekosistemasi juda katta va xilma xil.
+Bu qo'llanma orqali, men Babelning ichgi ishlash mexanizmini va qolgan komunitydagi toollar ishlashini
+tushuntirib beraman.
 
-> ***For future updates, follow [@thejameskyle](https://twitter.com/thejameskyle)
-> on Twitter.***
+> ***Yangiliklardan xabardor bo'lish uchun, [@thejameskyle](https://twitter.com/thejameskyle)
+> Twitterda follow qiling.***
 
 ----
 
