@@ -55,13 +55,13 @@ Babel bu imkoniyatni quyidagi holda amalga oshiradi. JavaScriptnig oxirigi stand
 barcha joyda ishlaydigan JavaScript versiyasiga ogiradi. Bu jarayon source-to-source kompilatsiya deyiladi
 va transpiling ham deb nomlanadi.
 
-Misol uchun, Babel yangi ES2015 arrow funksiya sintaksisini bu korinishdan:
+Misol uchun, Babel yangi ES2015 arrow funksiya sintaksisini bu ko'rinishdan:
 
 ```js
 const square = n => n * n;
 ```
 
-Bu korinishga otqaza oladi:
+Bu korinishga o'gira oladi:
 
 ```js
 const square = function square(n) {
@@ -69,7 +69,7 @@ const square = function square(n) {
 };
 ```
 
-Babelda bundan ham koproq imkoniyatlarga ega. Babelda React uchun JSX sintaksisi 
+Babel bundan ham koproq imkoniyatlarga ega. Babelda React uchun JSX sintaksisi 
 va statik tip tekshirish uchun Flow sintaksisi imkoniyatlari mavjud, 
 
 Qo'shimchasiga, Babel oddiy plugin lardan iborat. Har kim Babel uchun o'zini 
@@ -80,28 +80,25 @@ amalarni bajarish mumkin.
 JavaScript uchun keyingi avlod toollarini yaratish mumkin.
 
 Ko'plar bu imkoniyatlardan foydalanadi va shu tufayli Babelning ekosistemasi juda katta va xilma xil.
-Bu qo'llanma orqali, men Babelning ichgi ishlash mexanizmini va qolgan komunitydagi toollar ishlashini
+Bu qo'llanma orqali, men Babelning ichgi ishlash mexanizmini va qolgan komunitylardagi toollar ishlashini
 tushuntirib beraman.
 
-> ***Yangiliklardan xabardor bo'lish uchun, [@thejameskyle](https://twitter.com/thejameskyle)
-> Twitterda follow qiling.***
+> ***Oxirgi yangiliklardan xabardor bo'lish uchun, [@thejameskyle](https://twitter.com/thejameskyle)
+> ni Twitterda follow qiling.***
 
 ----
 
-# <a id="toc-setting-up-babel"></a>Setting up Babel
+# <a id="toc-setting-up-babel"></a>Babel ni sozlash
 
-Since the JavaScript community has no single build tool, framework, platform,
-etc., Babel has official integrations for all of the major tooling. Everything
-from Gulp to Browserify, from Ember to Meteor, no matter what your setup looks
-like there is probably an official integration.
+JavaScript komunitiysida juda ko'p frameworklar, platformlar, build toollar bo'lgani uchun, Babelda
+ularning barchasi uchun integratsiya qilish imkoniyati mavjud. Gulp dan boshlab Browserify gacha, Ember
+dan boshlab Meteor gacha va boshqa barcha toollar bilan integratsiya imkoni mavjud.
 
-For the purposes of this handbook, we're just going to cover the built-in ways
-of setting up Babel, but you can also visit the interactive
-[setup page](http://babeljs.io/docs/setup) for all of the integrations.
+Bu qo'llanmada biz faqat Babelni ozini so'zlashni ko'rib chiqamiz. Boshqa integratsiyalar
+uchun [setup page](http://babeljs.io/docs/setup) da tanishingiz mumkin.
 
-> **Note:** This guide is going to refer to command line tools like `node` and
-> `npm`. Before continuing any further you should be comfortable with these
-> tools.
+> **Eslatma:** Bu qo'llanmada `node` va `npm` command line toollaridan foydalaniladi.
+> Boshlashdan oldin bu toollar bilan tanishib chiqing.
 
 ## <a id="toc-babel-cli"></a>`babel-cli`
 
