@@ -102,35 +102,35 @@ uchun [setup page](http://babeljs.io/docs/setup) da tanishingiz mumkin.
 
 ## <a id="toc-babel-cli"></a>`babel-cli`
 
-Babel's CLI is a simple way to compile files with Babel from the command line.
+Babel CLI bilan kommand line orqali fayllarni  kompilatsiya qilish juda onson.
 
-Let's first install it globally to learn the basics.
+Babel CLI ni globalniy o'rnatib, asosiy amallarni ko'rib chiqamiz:
 
 ```sh
 $ npm install --global babel-cli
 ```
 
-We can compile our first file like so:
+Endi faylni quyidagicha kompilatsiya qilamiz:
 
 ```sh
 $ babel my-file.js
 ```
 
-This will dump the compiled output directly into your terminal. To write it to
-a file we'll specify an `--out-file` or `-o`.
+Bunda kompilatsiya qilingan kod terminalda ko'rinadi. Buni faylga yozish uchun
+`--out-file` yoki `-o` parametrini ko'rsatamiz.
 
 ```sh
 $ babel example.js --out-file compiled.js
-# or
+# yoki
 $ babel example.js -o compiled.js
 ```
 
-If we want to compile a whole directory into a new directory we can do so using
-`--out-dir` or `-d`.
+Butun papkani yangi papkaga kompilatsiya qilish uchun `--out-dir` yoki `-d` parametrlarini
+ko'rsatamiz.
 
 ```sh
 $ babel src --out-dir lib
-# or
+# yoki
 $ babel src -d lib
 ```
 
