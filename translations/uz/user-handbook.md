@@ -134,32 +134,33 @@ $ babel src --out-dir lib
 $ babel src -d lib
 ```
 
-### <a id="toc-running-babel-cli-from-within-a-project"></a>Running Babel CLI from within a project
+### <a id="toc-running-babel-cli-from-within-a-project"></a>Babel CLI ni proyekt ichida ishlatish
 
-While you _can_ install Babel CLI globally on your machine, it's much better
-to install it **locally** project by project.
+Babel CLI ni globalniy o'rnatish imkoniyati bor. Biroq Babel CLI ni har bita proyektga 
+alohida **lokalniy** o'rnatish taklif etiladi.
 
-There are two primary reasons for this.
+Bunga ikkita asosiy sababi mavjud:
 
-  1. Different projects on the same machine can depend on different versions of
-     Babel allowing you to update one at a time.
-  2. It means you do not have an implicit dependency on the environment you are
-     working in. Making your project far more portable and easier to setup.
+   1. Har xil proyektlarda Babelning versiyasi har xil bo'ishi mumkin va har birini alohida 
+      yangilash imkoniyati mavjud.
+   2. Yana bitta foydasi shuki, Babel CLI sizning ishlayotgan environmentingizga bog'liq bo'lmaydi.
+      Bu bilan proyektni o'ranitishingiz va boshqa joylarda ishlatishingiz onsonroq bo'ladi.
 
-We can install Babel CLI locally by running:
+Babel CLI ni lokal o'rnatish quyidagicha amalga oshiriladi:
 
 ```sh
 $ npm install --save-dev babel-cli
 ```
 
-> **Note:** Since it's generally a bad idea to run Babel globally you may want
-> to uninstall the global copy by running:
+> **Eslatma:** Babelni global o'rnatish tavsiya etilmagani uchun, quyidagi komanda
+> orqali uni o'chirishingiz mumkin:
 >
 > ```sh
 > $ npm uninstall --global babel-cli
 > ```
 
-After that finishes installing, your `package.json` file should look like this:
+Babel CLI ni o'rnatganingizdan so'ng, sizning `package.json` faylingiz quyidagi
+ko'rinishda bo'lishi kerak:
 
 ```json
 {
@@ -171,11 +172,13 @@ After that finishes installing, your `package.json` file should look like this:
 }
 ```
 
-Now instead of running Babel directly from the command line we're going to put
-our commands in **npm scripts** which will use our local version.
+Babelni to'g'ridan to'g'ri komand line orqali ishlatmasdan, uni **npm scripts** ichiga 
+joylashtiramiz. **npm scripts** ichidagi kommandalar lokal o'rnatilgan Babelni ishlatadi.
 
-Simply add a `"scripts"` field to your `package.json` and put the babel command
-inside there as `build`.
+`package.json` fayl ichiga `"scripts"` fieldini qo'shing va babel komandasini `build` ichiga
+joylashtiring. 
+
+Quyidagicha:
 
 ```diff
   {
@@ -190,13 +193,14 @@ inside there as `build`.
   }
 ```
 
-Now from our terminal we can run:
+Endi terminal orqali quyidagi komandani ishga tushuramiz:
 
 ```js
 npm run build
 ```
 
-This will run Babel the same way as before, only now we are using a local copy.
+Bu komanda oldingi Babel komandalaridaka ishlaydi, faqat bunda lokal o'rnatilgan
+Babel ishga tushadi.
 
 ## <a id="toc-babel-register"></a>`babel-register`
 
