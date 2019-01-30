@@ -139,11 +139,11 @@ $ babel src -d lib
 Babel CLI ni globalniy o'rnatish imkoniyati bor. Biroq Babel CLI ni har bita proyektga 
 alohida **lokalniy** o'rnatish taklif etiladi.
 
-Bunga ikkita asosiy sababi mavjud:
+Bunga ikkita asosiy sabablar mavjud:
 
-   1. Har xil proyektlarda Babelning versiyasi har xil bo'ishi mumkin va har birini alohida 
+   1. Har xil proyektda Babelning versiyasi har xil bo'ishi mumkin va har birini alohida 
       yangilash imkoniyati mavjud.
-   2. Yana bitta foydasi shuki, Babel CLI sizning ishlayotgan environmentingizga bog'liq bo'lmaydi.
+   2. Yana bitta foydasi shuki, Babel CLI sizning ishlayotgan environmentga bog'liq bo'lmaydi.
       Bu bilan proyektni o'ranitishingiz va boshqa joylarda ishlatishingiz onsonroq bo'ladi.
 
 Babel CLI ni lokal o'rnatish quyidagicha amalga oshiriladi:
@@ -175,7 +175,7 @@ ko'rinishda bo'lishi kerak:
 Babelni to'g'ridan to'g'ri komand line orqali ishlatmasdan, uni **npm scripts** ichiga 
 joylashtiramiz. **npm scripts** ichidagi kommandalar lokal o'rnatilgan Babelni ishlatadi.
 
-`package.json` fayl ichiga `"scripts"` fieldini qo'shing va babel komandasini `build` ichiga
+`package.json` fayl ichiga `"scripts"` ni qo'shing va babel komandasini `build` ichiga
 joylashtiring. 
 
 Quyidagicha:
@@ -204,52 +204,51 @@ Babel ishga tushadi.
 
 ## <a id="toc-babel-register"></a>`babel-register`
 
-The next most common method of running Babel is through `babel-register`. This
-option will allow you to run Babel just by requiring files, which may integrate
-with your setup better.
+Babelni ishlatishni keyingi eng ko'p tarqalgan usul bu Babelni `babel-register` 
+orqali ishlatishdir. Bunda fayllarni require qilib Babelni ishga tushurishingiz
+mumkin.
 
-Note that this is not meant for production use. It's considered bad practice to
-deploy code that gets compiled this way. It is far better to compile ahead of
-time before deploying. However this works quite well for build scripts or other
-things that you run locally.
+Bu usul productionda ishlatishga tavsiya etilmaydi. Bu usul bilan kodni deploy qilish
+bad practise hisoblanadi. Deploy qilishdan oldin kompilatsiya qilish tavsiya etiladi.
+Biroq lokal fayllarni yoki build scriptlarni ishga tushurishda bu usul juda yordam beradi.
 
-First let's create an `index.js` file in our project.
+Birinchi bo'lib `index.js` faylni yaratamiz.
 
 ```js
 console.log("Hello world!");
 ```
 
-If we were to run this with `node index.js` this wouldn't be compiled with
-Babel. So instead of doing that, we'll setup `babel-register`.
+Bu kodni `node index.js` orqali ishga tushursak, unda Babelga kompilatsiya bo'lmaydi. 
+Shuning uchun `babel-register` ni sozlaymiz.
 
-First install `babel-register`.
+Birinchi `babel-register` ni o'rnating.
 
 ```sh
 $ npm install --save-dev babel-register
 ```
 
-Next, create a `register.js` file in the project and write the following code:
+Keyin `register.js` fayl yarating va unga quyidagi kodni yozing:
 
 ```js
 require("babel-register");
 require("./index.js");
 ```
 
-What this does is *registers* Babel in Node's module system and begins compiling
-every file that is `require`'d.
+Bunda Babel Node ning module sistemasiga **registratsiya** bo'ladi va barcha
+`require` orqali chaqirilgan fayllar kompilatsiya bo'ladi.
 
-Now, instead of running `node index.js` we can use `register.js` instead.
+Endi, `node index.js` ni o'rniga `register.js` ni ishga tushursak boladi.
 
 ```sh
 $ node register.js
 ```
 
-> **Note:** You can't register Babel in the same file that you want to compile.
-> As node is executing the file before Babel has a chance to compile it.
+> **Eslatma:** Kompilatsiya qilinaytgan faylda Babelni registratsiya qilish imkoniyati
+> yo'q. Bunda Babeld kompilatsiya qilishidan oldin, Node birinchi bo'lib faylni ishga tushuradi.
 >
 > ```js
 > require("babel-register");
-> // not compiled:
+> // kompilatsiya bo'lmaydi:
 > console.log("Hello world!");
 > ```
 
