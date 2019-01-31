@@ -208,7 +208,7 @@ Babelni ishlatishni keyingi eng ko'p tarqalgan usul bu Babelni `babel-register`
 orqali ishlatishdir. Bunda fayllarni require qilib Babelni ishga tushurishingiz
 mumkin.
 
-Bu usul productionda ishlatishga tavsiya etilmaydi. Bu usul bilan kodni deploy qilish
+Bu usulni productionda ishlatish tavsiya etilmaydi. Bu usul bilan kodni deploy qilish
 bad practise hisoblanadi. Deploy qilishdan oldin kompilatsiya qilish tavsiya etiladi.
 Biroq lokal fayllarni yoki build scriptlarni ishga tushurishda bu usul juda yordam beradi.
 
@@ -234,17 +234,17 @@ require("babel-register");
 require("./index.js");
 ```
 
-Bunda Babel Node ning module sistemasiga **registratsiya** bo'ladi va barcha
+Bunda Babel, Node ning module sistemasiga **registratsiya** bo'ladi va barcha
 `require` orqali chaqirilgan fayllar kompilatsiya bo'ladi.
 
-Endi, `node index.js` ni o'rniga `register.js` ni ishga tushursak boladi.
+Endi `node index.js` ni o'rniga `register.js` ni ishga tushursak boladi.
 
 ```sh
 $ node register.js
 ```
 
 > **Eslatma:** Kompilatsiya qilinaytgan faylda Babelni registratsiya qilish imkoniyati
-> yo'q. Bunda Babeld kompilatsiya qilishidan oldin, Node birinchi bo'lib faylni ishga tushuradi.
+> yo'q. Bunda Babel kompilatsiya qilishidan oldin, birinchi bo'lib Node faylni ishga tushuradi.
 >
 > ```js
 > require("babel-register");
@@ -254,28 +254,27 @@ $ node register.js
 
 ## <a id="toc-babel-node"></a>`babel-node`
 
-If you are just running some code via the `node` CLI the easiest way to
-integrate Babel might be to use the `babel-node` CLI which largely is just a
-drop in replacement for the `node` CLI.
+Agarda kodni faqat `node` CLI orqali ishga tushursangiz, unda Babel ni
+ishlatishning eng onson yo'li bu `babel-node` CLI bilan ishlatish hisoblanadi.
 
-Note that this is not meant for production use. It's considered bad practice to
-deploy code that gets compiled this way. It is far better to compile ahead of
-time before deploying. However this works quite well for build scripts or other
-things that you run locally.
+Bu usulni productionda ishlatish tavsiya etilmaydi. Bu usul bilan kodni deploy qilish
+bad practise hisoblanadi. Deploy qilishdan oldin kompilatsiya qilish tavsiya etiladi.
+Biroq lokal fayllarni yoki build scriptlarni ishga tushurishda bu usul juda yordam beradi.
 
-First make sure that you have `babel-cli` installed.
+
+Birinchi bo'lib `babel-cli` o'rnating:
 
 ```sh
 $ npm install --save-dev babel-cli
 ```
 
-> **Note:** If you are wondering why we are installing this locally, please read
-> the [Running Babel CLI from within a project](#toc-running-babel-cli-from-within-a-project)
-> section above.
+> **Eslatma:** `babel-node` ni lokal o'rnatish sababini
+> [Babel CLI ni proyekt ichiga qoyish](#toc-running-babel-cli-from-within-a-project)
+> bo'limida ko'rishingiz mumkin.
 
-Then replace wherever you are running `node` with `babel-node`.
+Keyin, `node` bilan ishga tushuriladigan kommadalarni `babel-node` ga almashtiring.
 
-If you are using npm `scripts` you can simply do:
+Agarda npm `scripts` ni ishlatsangiz, unda quyidagi ko'rinishda yozishingiz mumkin:
 
 ```diff
   {
@@ -286,14 +285,14 @@ If you are using npm `scripts` you can simply do:
   }
 ```
 
-Otherwise you'll need to write out the path to `babel-node` itself.
+Aks holda `babel-node`ning path ni ko'ratishingizga to'g'ri keladi.
 
 ```diff
 - node script.js
 + ./node_modules/.bin/babel-node script.js
 ```
 
-> Tip: You can also use [`npm-run`](https://www.npmjs.com/package/npm-run).
+> Maslahat: [`npm-run`](https://www.npmjs.com/package/npm-run) ni ishlatsangiz ham bo'ladi.
 
 ## <a id="toc-babel-core"></a>`babel-core`
 
