@@ -296,10 +296,10 @@ Aks holda `babel-node`ning path ni ko'ratishingizga to'g'ri keladi.
 
 ## <a id="toc-babel-core"></a>`babel-core`
 
-If you need to use Babel programmatically for some reason, you can use the
-`babel-core` package itself.
+Agarda siz fayllarinigizni o'zingiz transpile qilmmoqchi bo'lasngiz unda `babel-core` ni
+o'zini ishlatishingiz mumkin.
 
-First install `babel-core`.
+Birinchi bo'lib `babel-core`ni o'rnating.
 
 ```sh
 $ npm install babel-core
@@ -309,15 +309,15 @@ $ npm install babel-core
 var babel = require("babel-core");
 ```
 
-If you have a string of JavaScript you can compile it directly using
-`babel.transform`.
+`babel.transform` orqali JavaScript kodni to'g'ridan to'g'ri kompilatsiya qilishingiz
+mumkin. 
 
 ```js
 babel.transform("code();", options);
 // => { code, map, ast }
 ```
 
-If you are working with files you can use either the asynchronous api:
+Agarda fayllar bilan ishlasangiz unda asinxron api larni ishlatshingiz mumkin:
 
 ```js
 babel.transformFile("filename.js", options, function(err, result) {
@@ -325,23 +325,23 @@ babel.transformFile("filename.js", options, function(err, result) {
 });
 ```
 
-Or the synchronous api:
+Yoki sinxron api bilan:
 
 ```js
 babel.transformFileSync("filename.js", options);
 // => { code, map, ast }
 ```
 
-If you already have a Babel AST for whatever reason you may transform from the
-AST directly.
+`babel.transformFromAst` bilan Babel AST ni to'g'ridan to'g'ri kodga o'gira
+olasiz.
 
 ```js
 babel.transformFromAst(ast, code, options);
 // => { code, map, ast }
 ```
 
-For all of the above methods, `options` refers to
-https://babeljs.io/docs/usage/api/#options.
+Yuqoridagi metodlardagi `options` haqida malumotni shu linkda korishingiz mumkin
+ https://babeljs.io/docs/usage/api/#options.
 
 ----
 
