@@ -345,7 +345,7 @@ Yuqoridagi metodlardagi `options` haqida malumotni shu linkda korishingiz mumkin
 
 ----
 
-# <a id="toc-configuring-babel"></a>Configuring Babel
+# <a id="toc-configuring-babel"></a>Babelni sozlash
 
 You may have noticed by now that running Babel on its own doesn't seem to do
 anything other than copy JavaScript files from one location to another.
