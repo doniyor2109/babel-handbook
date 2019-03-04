@@ -347,11 +347,10 @@ Yuqoridagi metodlardagi `options` haqida malumotni shu linkda korishingiz mumkin
 
 # <a id="toc-configuring-babel"></a>Babelni sozlash
 
+Babel faqatgina JavaScript fayllarni bir joydan ikkinchi joyga kochirish
+uchun ishlatilmaydi, balkim undan ham ko'p narsalarga qodir.
 
-You may have noticed by now that running Babel on its own doesn't seem to do
-anything other than copy JavaScript files from one location to another.
-
-This is because we haven't told Babel to do anything yet.
+Biz hali Babelni to'liq kuchidan foydalanmadik.
 
 > Since Babel is a general purpose compiler that gets used in a myriad of
 > different ways, it doesn't do anything by default. You have to explicitly tell
